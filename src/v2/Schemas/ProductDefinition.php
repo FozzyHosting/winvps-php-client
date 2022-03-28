@@ -23,7 +23,7 @@ class ProductDefinition
     /**
      * Predefined product resources.
      *
-     * @var 
+     * @var ProductLimitsDefinition
      */
     public $limits;
 

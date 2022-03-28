@@ -17,14 +17,14 @@ class JobDefinition extends EntityDefinition
      *
      * @var integer
      */
-    public $parent_id;
+    public $parent_id; // phpcs:ignore
 
     /**
      * ID of the machine Job created for.
      *
      * @var integer
      */
-    public $machine_id;
+    public $machine_id; // phpcs:ignore
 
     /**
      * Defines the command which be executed.
@@ -46,5 +46,5 @@ class JobDefinition extends EntityDefinition
      *
      * @var string
      */
-    public $start_time;
+    public $start_time; // phpcs:ignore
 }

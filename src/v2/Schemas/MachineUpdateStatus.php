@@ -7,22 +7,22 @@ class MachineUpdateStatus
     /**
      * @var integer
      */
-    public $h_result;
+    public $h_result; // phpcs:ignore
 
     /**
      * @var boolean
      */
-    public $reboot_required;
+    public $reboot_required; // phpcs:ignore
 
     /**
      * @var integer
      */
-    public $result_code;
+    public $result_code; // phpcs:ignore
 
     /**
      * @var string
      */
-    public $update_time;
+    public $update_time; // phpcs:ignore
 
     /**
      * Make an object of class MachineUpdateStatus

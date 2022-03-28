@@ -9,21 +9,21 @@ class MachineOS
      *
      * @var integer
      */
-    public $template_id;
+    public $template_id; // phpcs:ignore
 
     /**
      * Brand primary ID.
      *
      * @var integer
      */
-    public $brand_id;
+    public $brand_id; // phpcs:ignore
 
     /**
      * Machine update status
      *
      * @var MachineUpdateStatus
      */
-    public $update_status;
+    public $update_status; // phpcs:ignore
 
     /**
      * Make an object of class MachineOS
@@ -36,15 +36,15 @@ class MachineOS
         $instance = new self;
 
         if (isset($machineOs['template_id'])) {
-            $instance->template_id = $machineOs['template_id'];
+            $instance->template_id = $machineOs['template_id']; // phpcs:ignore
         }
 
         if (isset($machineOs['brand_id'])) {
-            $instance->brand_id = $machineOs['brand_id'];
+            $instance->brand_id = $machineOs['brand_id']; // phpcs:ignore
         }
 
         if (isset($machineOs['update_status'])) {
-            $instance->update_status = MachineUpdateStatus::make($machineOs['update_status']);
+            $instance->update_status = MachineUpdateStatus::make($machineOs['update_status']); // phpcs:ignore
         }
 
         return $instance;

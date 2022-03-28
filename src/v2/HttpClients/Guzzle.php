@@ -18,14 +18,16 @@ class Guzzle extends HttpClient
     {
         parent::__construct($apiKey, $apiUrl);
 
-        $this->client = new Client([
-            'allow_redirects' => false,
-            'base_uri' => $this->apiUrl,
-            'headers' => [
-                'API-KEY' => $this->apiKey,
-            ],
-            'http_errors' => false,
-        ]);
+        $this->client = new Client(
+            [
+                'allow_redirects' => false,
+                'base_uri' => $this->apiUrl,
+                'headers' => [
+                    'API-KEY' => $this->apiKey,
+                ],
+                'http_errors' => false,
+            ]
+        );
     }
 
     /**
