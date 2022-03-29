@@ -28,9 +28,8 @@ class MachineUpdateStatus
      * Make an object of class MachineUpdateStatus
      *
      * @param array $updateStatus Update status data
-     * @return MachineUpdateStatus
      */
-    public static function make(array $updateStatus): MachineUpdateStatus
+    public static function make(array $updateStatus)
     {
         $instance = new self;
 

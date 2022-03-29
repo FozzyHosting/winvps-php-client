@@ -44,7 +44,7 @@ class MachinePasswordResponse
     /**
      * @throws MappingException
      */
-    public static function make(array $machinePassword): MachinePasswordResponse
+    public static function make(array $machinePassword)
     {
         $instance = new self;
 

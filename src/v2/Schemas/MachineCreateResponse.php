@@ -24,10 +24,9 @@ class MachineCreateResponse
      * Make an object of class ListResponse
      *
      * @param array $response Response from the API
-     * @return MachineCreateResponse
      * @throws MappingException
      */
-    public static function make(array $response): MachineCreateResponse
+    public static function make(array $response)
     {
         $instance = new self;
 

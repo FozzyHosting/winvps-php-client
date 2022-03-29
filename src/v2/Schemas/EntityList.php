@@ -5,13 +5,12 @@ namespace Fozzy\WinVPS\Api\V2\Schemas;
 class EntityList
 {
     /**
-     * Make an array with {Entity}Definition class objects
+     * Make an array with EntityDefinition class objects
      *
      * @param array $data Array with entities data
      * @param string $entityName Entity name
-     * @return Definition[]
      */
-    public static function make(array $data, string $entityName): array
+    public static function make(array $data, string $entityName)
     {
         $entityDefinitionClassname = __NAMESPACE__ . '\\' . $entityName . 'Definition';
         $entityList = [];

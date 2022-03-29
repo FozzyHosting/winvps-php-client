@@ -24,10 +24,9 @@ class MachineAddIpResponse
      * Make an object of class MachineAddIpResponse
      *
      * @param array $addIP Additional IP data
-     * @return MachineAddIpResponse
      * @throws MappingException
      */
-    public static function make(array $addIP): MachineAddIpResponse
+    public static function make(array $addIP)
     {
         $instance = new self;
 

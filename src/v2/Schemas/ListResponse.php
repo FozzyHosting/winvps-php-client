@@ -22,9 +22,8 @@ class ListResponse
      * Make an object of class ListResponse
      *
      * @param array $response Response from the API
-     * @return ListResponse
      */
-    public static function make(array $response): ListResponse
+    public static function make(array $response)
     {
         $instance = new static;
 

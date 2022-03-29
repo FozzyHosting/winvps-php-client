@@ -52,10 +52,9 @@ class MachineDefinition
      * Make an object of class MachineDefinition
      *
      * @param array $machine Machine data
-     * @return MachineDefinition
      * @throws MappingException
      */
-    public static function make(array $machine): MachineDefinition
+    public static function make(array $machine)
     {
         $instance = new self;
 
