@@ -1,5 +1,8 @@
-<testsuites>
-    <testsuite name="Package Test Suite">
-        <directory>tests/</directory>
-    </testsuite>
-</testsuites>
+<phpunit bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="Package Test Suite">
+            <directory>tests/</directory>
+            <exclude>./tests/v2/Entities/ApiEntityTest.php</exclude>
+        </testsuite>
+    </testsuites>
+</phpunit>
