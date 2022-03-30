@@ -20,40 +20,124 @@ class Client
     /**
      * @var Brands
      */
-    public $brands;
+    public $brandsInstance;
 
     /**
      * @var Jobs
      */
-    public $jobs;
+    public $jobsInstance;
 
     /**
      * @var Locations
      */
-    public $locations;
+    public $locationsInstance;
 
     /**
      * @var Machines
      */
-    public $machines;
+    public $machinesInstance;
 
     /**
      * @var Products
      */
-    public $products;
+    public $productsInstance;
 
     /**
      * @var Templates
      */
-    public $templates;
+    public $templatesInstance;
+
+    /**
+     * @var HttpClient
+     */
+    public $httpClient;
 
     public function __construct(HttpClient $httpClient)
     {
-        $this->brands = new Brands($httpClient);
-        $this->jobs = new Jobs($httpClient);
-        $this->locations = new Locations($httpClient);
-        $this->machines = new Machines($httpClient);
-        $this->products = new Products($httpClient);
-        $this->templates = new Templates($httpClient);
+        $this->httpClient = $httpClient;
+    }
+
+    /**
+     * Create and return Brands instance
+     *
+     * @return Brands
+     */
+    public function brands(): Brands
+    {
+        if (!$this->brandsInstance) {
+            $this->brandsInstance = new Brands($this->httpClient);
+        }
+
+        return $this->brandsInstance;
+    }
+
+    /**
+     * Create and return Jobs instance
+     *
+     * @return Jobs
+     */
+    public function jobs(): Jobs
+    {
+        if (!$this->jobsInstance) {
+            $this->jobsInstance = new Jobs($this->httpClient);
+        }
+
+        return $this->jobsInstance;
+    }
+
+    /**
+     * Create and return Locations instance
+     *
+     * @return Locations
+     */
+    public function locations(): Locations
+    {
+        if (!$this->locationsInstance) {
+            $this->locationsInstance = new Locations($this->httpClient);
+        }
+
+        return $this->locationsInstance;
+    }
+
+    /**
+     * Create and return Machines instance
+     *
+     * @return Machines
+     */
+    public function machines(): Machines
+    {
+        if (!$this->machinesInstance) {
+            $this->machinesInstance = new Machines($this->httpClient);
+        }
+
+        return $this->machinesInstance;
+    }
+
+    /**
+     * Create and return Products instance
+     *
+     * @return Products
+     */
+    public function products(): Products
+    {
+        if (!$this->productsInstance) {
+            $this->productsInstance = new Products($this->httpClient);
+        }
+
+        return $this->productsInstance;
+    }
+
+    /**
+     * Create and return Templates instance
+     *
+     * @return Templates
+     */
+    public function templates(): Templates
+    {
+        if (!$this->templatesInstance) {
+            $this->templatesInstance = new Templates($this->httpClient);
+        }
+
+        return $this->templatesInstance;
     }
 }

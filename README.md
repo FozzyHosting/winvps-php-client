@@ -19,13 +19,13 @@ use Fozzy\WinVPS\Api\Client;
 $client = Client::make('api-key');
 
 // Returns list of all templates available for new machines
-$templates = $client->templates->list();
+$templates = $client->templates()->list();
 
 // View single Job details
-$jobDetails = $client->jobs->getById($jobId);
+$jobDetails = $client->jobs()->getById($jobId);
 
 // Send single command which does not need additional options
-$jobs = $client->machines->sendCommandByName($machineName, 'restart');
+$jobs = $client->machines()->sendCommandByName($machineName, 'restart');
 ```
 
 # Подробности
