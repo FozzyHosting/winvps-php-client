@@ -1,0 +1,31 @@
+{
+    "name": "fozzy-hosting/winvps-php-client",
+    "description": "Fozzy Windows VPS APIv2 client library for PHP",
+    "authors": [
+        {
+            "name": "Fozzy Inc.",
+            "homepage": "https://fozzy.com"
+        }
+    ],
+    "type": "library",
+    "require": {
+        "php": "7.*",
+        "guzzlehttp/guzzle": "^7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^1.4",
+        "squizlabs/php_codesniffer": "^3.6"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Fozzy\\WinVPS\\Api\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fozzy\\WinVPS\\Tests\\": "tests/"
+        }
+    }
+}
