@@ -1,5 +1,5 @@
 {
-    "name": "fozzy-hosting/winvps-php-client",
+    "name": "fozzyhosting/winvps-php-client",
     "description": "Fozzy Windows VPS APIv2 client library for PHP",
     "authors": [
         {
