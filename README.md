@@ -1,16 +1,18 @@
-Данный PHP пакет есть ничто иное, как клиент для Reseller API v2 сервиса WinVPS (winvps.fozzy.com).
+# Windows VPS API Client
 
-Ранее уже был подобный [PHP пакет](https://github.com/FozzyHosting/winvps-api-php), созданный на основе кодогенерации и Swagger документации. Его принято считать устаревшим.
+This package introduces APIv2 for Windows VPS services using PHP 7.x. PHP8.x version will follow shortly.
 
-# Установка и примеры использования
+It's a complete rewrite of existing [winvps-api-php](https://github.com/FozzyHosting/winvps-api-php) with remaining API request/response format.
 
-Чтобы установить пакет в свой проект, следует выполнить команду:
+## Installation
 
-`composer require fozzy-hosting/winvps-php-client`
+`composer require fozzyhosting/winvps-php-client`
 
-После установки пакета мы можем создать экземпляр клиента и выполнять запросы следующим образом:
+
+## Usage
 
 ```php
+
 <?php
 
 use Fozzy\WinVPS\Api\Client;
@@ -28,58 +30,22 @@ $jobDetails = $client->jobs()->getById($jobId);
 $jobs = $client->machines()->sendCommandByName($machineName, 'restart');
 ```
 
-# Подробности
+The following plugin introduces main VPS entities you can use:
 
-Клиент позволяет управлять 6-ю сущностями:
+- Brands
+- Jobs 
+- Locations
+- Machines 
+- Products 
+- Templates
 
-* Brands
-* Jobs
-* Locations
-* Machines
-* Products
-* Templates
+All the classes are fully described in `src/v2/Entities/` directory. Description of response objects can be found in `src/v2/Schemas/` 
 
-Описание методов сущностей основано на документации PHPDoc. Классы сущностей находятся в директории `src/v2/Entities/`. Все сущности унаследованы от класса Entity.
 
-Методы в большинстве случаев возвращают объекты или массивы, основанные на классах в директории `src/v2/Schemas/`. Реализован своего рода "_data mapping_".
+## Testing
 
-## Зависимости
-
-В пакете есть зависимости:
-
-```json
-"require": {
-    "php": "7.*",
-    "guzzlehttp/guzzle": "^7.4"
-}
-```
-
-## Dev зависимости
-
-Также есть зависимости для окружения разработчика:
-
-```json
-"require-dev": {
-    "phpunit/phpunit": "^9.5",
-    "phpstan/phpstan": "^1.4",
-    "squizlabs/php_codesniffer": "^3.6"
-}
-```
-
-Тесты находятся в директории `tests/`. Тесты используют файл конфигурации `phpunit.xml`.
-
-Чтобы выполнить тесты, выполните команду в директории пакета:
+Tests are implemented in `tests/` directory, and utilize PHPUnit and PHPStan dev dependencies.
 
 `./vendor/bin/phpunit`
 
-Статический анализатор кода (**_phpstan_**) использует файл конфигурации `phpstan.neon`.
-
-Чтобы выполнить анализ кода, выполните команду в директории проекта:
-
 `./vendor/bin/phpstan analyse`
-
-CodeSniffer (**_phpcs_**) использует файл конфигурации `phpcs.xml.dist`.
-
-Чтобы выполнить проверку стандартов, выполните команду в директории проекта:
-
-`./vendor/bin/phpcs`
