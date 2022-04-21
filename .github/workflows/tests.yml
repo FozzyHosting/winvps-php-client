@@ -27,5 +27,8 @@ jobs:
       - name: Run composer install
         run: composer install -n --prefer-dist
 
+      - name: Running dump-autoload
+        run: composer dump-autoload
+
       - name: Execute PHPUnit
         run: composer test 
