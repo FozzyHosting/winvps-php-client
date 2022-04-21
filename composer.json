@@ -11,7 +11,8 @@
     ],
     "type": "library",
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "optimize-autoloader": true
     },
     "require": {
         "php": "7.*",
