@@ -17,4 +17,9 @@ class ApiEntityTest extends TestCase
         $entity = new $class($httpClient);
         return call_user_func_array([$entity, $method], $params);
     }
+
+    public function testNoTest(): void
+    {
+        $this->markTestSkipped();
+    }
 }

@@ -4,10 +4,16 @@
     "authors": [
         {
             "name": "Fozzy Inc.",
-            "homepage": "https://fozzy.com"
+            "homepage": "https://fozzy.com",
+            "role": "Developer",
+            "email": "dev@fozzy.com"
         }
     ],
     "type": "library",
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
     "require": {
         "php": "7.*",
         "guzzlehttp/guzzle": "^7.4"
@@ -27,5 +33,13 @@
         "psr-4": {
             "Fozzy\\WinVPS\\Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "test": [
+            "phpunit --no-coverage"
+        ] 
+    },
+    "scripts-descriptions": {
+        "test" : "Runs PHPUnit test cases without coverage report"
     }
 }
