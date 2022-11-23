@@ -8,7 +8,7 @@ use Fozzy\WinVPS\Api\V2\Schemas\JobsListResponse;
 use Fozzy\WinVPS\Api\V2\Schemas\MachineAddIpResponse;
 use Fozzy\WinVPS\Api\V2\Schemas\MachineCreateResponse;
 use Fozzy\WinVPS\Api\V2\Schemas\MachineDefinition;
-use Fozzy\WinVPS\Api\V2\Schemas\MachinePasswordResponse;
+use Fozzy\WinVPS\Api\V2\Schemas\MachineChangePasswordResponse;
 use Fozzy\WinVPS\Api\V2\Schemas\MachineUsersListResponse;
 use Fozzy\WinVPS\Api\V2\Schemas\MachinesListResponse;
 
@@ -180,15 +180,17 @@ class Machines extends Entity
     }
 
     /**
-     * Returns the password for the root user of the machine.
+     * Change VPS machine password.
      *
      * @param string $name Machine name
-     * @return MachinePasswordResponse
+     * @param string $password New machine password
+     * @return MachineChangePasswordResponse
      */
-    public function passwordByName(string $name): MachinePasswordResponse
+    public function changePasswordByName(string $name, string $password): MachineChangePasswordResponse
     {
-        $response = $this->httpClient->request('machines/' . $name . '/password');
-        return MachinePasswordResponse::make($response['data']);
+        $params = ['password' => $password];
+        $response = $this->httpClient->request('machines/' . $name . '/change_password', 'POST', [], [], $params);
+        return MachineChangePasswordResponse::make($response['data']);
     }
 
     /**
