@@ -10,7 +10,7 @@ use Fozzy\WinVPS\Api\V2\Schemas\JobsListResponse;
 use Fozzy\WinVPS\Api\V2\Schemas\MachineAddIpResponse;
 use Fozzy\WinVPS\Api\V2\Schemas\MachineCreateResponse;
 use Fozzy\WinVPS\Api\V2\Schemas\MachineDefinition;
-use Fozzy\WinVPS\Api\V2\Schemas\MachinePasswordResponse;
+use Fozzy\WinVPS\Api\V2\Schemas\MachineChangePasswordResponse;
 use Fozzy\WinVPS\Api\V2\Schemas\MachinesListResponse;
 use Fozzy\WinVPS\Api\V2\Schemas\MachineUsersListResponse;
 use GuzzleHttp\Psr7\Response;
@@ -245,16 +245,16 @@ class MachinesTest extends ApiEntityTest
         $this->assertInstanceOf(MachineUsersListResponse::class, $list);
     }
 
-    public function testPasswordByName()
+    public function testChangePasswordByName()
     {
         $response = new Response(
             200,
             ['Content-Type' => 'application/json; charset=UTF-8'],
-            '{"data":{"id":1,"name":"VPSTest","status":"In Progress","password":"testpassword","users":[{"username":"testuser","password":"testpassword"}]}}'
+            '{"data":{"result":true}}'
         );
 
-        $password = $this->runAPI(Machines::class, 'passwordByName', ['VPSTest'], $response);
-        $this->assertInstanceOf(MachinePasswordResponse::class, $password);
+        $changePassword = $this->runAPI(Machines::class, 'changePasswordByName', ['VPSTest', 'testpass'], $response);
+        $this->assertInstanceOf(MachineChangePasswordResponse::class, $changePassword);
     }
 
     public function testSendCommandByName()
