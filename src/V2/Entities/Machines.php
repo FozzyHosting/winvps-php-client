@@ -43,6 +43,7 @@ class Machines extends Entity
      * $params['add_band']      (integer)   Additional bandwidth.
      * $params['auto_start']    (integer)
      * $params['add_ipv6']      (integer)
+     * $params['ui_language']   (string) ['en-US' | 'de-DE' | 'ru-RU' | 'zh-CN' | 'ar-SA' | 'ja-JP' | 'ko-KR']
      *
      * @return MachineCreateResponse
      */
